@@ -15,16 +15,22 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<!-- $Id: sitemap.xmap 697547 2008-09-21 16:52:48Z reinhard $ -->
 <map:sitemap xmlns:map="http://apache.org/cocoon/sitemap" xmlns:servlet="http://apache.org/cocoon/servlet" 
-  xmlns:controller="http://apache.org/cocoon/controller"> 
-
+	     xmlns:controller="http://apache.org/cocoon/controller"> 
+  
   <map:pipelines>
     <map:pipeline>
       <map:match pattern="">
         <map:read src="welcome.html" />
       </map:match>
     </map:pipeline>    
+    
+    <!-- Global error handling -->
+    <map:handle-errors>
+      <map:generate type="exception" />
+      <map:serialize type="xml" status-code="500" />
+    </map:handle-errors>
+    
   </map:pipelines>
   
 </map:sitemap>
