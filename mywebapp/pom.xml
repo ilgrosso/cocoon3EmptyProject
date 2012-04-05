@@ -42,6 +42,11 @@
       <artifactId>mysite</artifactId>
       <version>${project.version}</version>
     </dependency>
+    <dependency>
+      <groupId>com.mycompany</groupId>
+      <artifactId>mysite2</artifactId>
+      <version>${project.version}</version>
+    </dependency>
   </dependencies>
 
   <build>
