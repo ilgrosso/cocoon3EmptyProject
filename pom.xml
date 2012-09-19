@@ -16,7 +16,7 @@
   KIND, either express or implied.  See the License for the
   specific language governing permissions and limitations
   under the License.
---><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+--><!-- $Id: pom.xml 1382781 2012-09-10 12:02:24Z ilgrosso $ --><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   
   <modelVersion>4.0.0</modelVersion>
   <packaging>pom</packaging>
@@ -25,57 +25,60 @@
   <groupId>com.mycompany</groupId>
   <version>1-SNAPSHOT</version>
   <name>myparent</name>
-  
+
   <modules>
     <module>mysite</module>
     <module>mysite2</module>
     <module>mywebapp</module>
   </modules>
-  
+
   <properties>
     <cocoon.version>3.0.0-beta-1-SNAPSHOT</cocoon.version>
-    <spring.version>3.1.1.RELEASE</spring.version>
-    
+
+    <spring.version>3.1.2.RELEASE</spring.version>
+
+    <logback.version>1.0.7</logback.version>
+    <slf4j.version>1.7.0</slf4j.version>
+
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <javac.src.version>1.6</javac.src.version>
     <javac.target.version>1.6</javac.target.version>
   </properties>
-  
+
   <dependencyManagement>
     <dependencies>
       <!-- Cocoon subprojects -->
       <dependency>
 	<groupId>org.apache.cocoon</groupId>
 	<artifactId>cocoon-servlet-service-impl</artifactId>
-        <!-- After upgrading to 1.2.1 fix the TODO in ServiceServletMonitor -->
-	<version>1.2.0</version>
+	<version>1.3.1</version>
       </dependency>
       <dependency>
 	<groupId>org.apache.cocoon</groupId>
 	<artifactId>cocoon-configuration-api</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.4</version>
       </dependency>
       <dependency>
 	<groupId>org.apache.cocoon</groupId>
 	<artifactId>cocoon-spring-configurator</artifactId>
-	<version>2.1.0</version>
+	<version>2.2.1</version>
       </dependency>
       <dependency>
 	<groupId>org.apache.cocoon</groupId>
 	<artifactId>cocoon-block-deployment</artifactId>
-	<version>1.1.0</version>
+	<version>1.2.1</version>
       </dependency>
       <dependency>
 	<groupId>org.apache.cocoon</groupId>
 	<artifactId>cocoon-jnet</artifactId>
-	<version>1.2.0</version>
+	<version>1.2.2</version>
       </dependency>
       <dependency>
 	<groupId>org.apache.cocoon</groupId>
 	<artifactId>cocoon-xml</artifactId>
-	<version>2.0.2</version>
+	<version>2.0.4</version>
 	<exclusions>
 	  <exclusion>
 	    <groupId>xml-apis</groupId>
@@ -86,9 +89,9 @@
       <dependency>
 	<groupId>org.apache.cocoon</groupId>
 	<artifactId>cocoon-serializers-charsets</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.2</version>
       </dependency>
-      
+
       <!-- Spring (+ AOP support)-->
       <dependency>
 	<groupId>org.springframework</groupId>
@@ -133,34 +136,34 @@
       <dependency>
 	<groupId>org.aspectj</groupId>
 	<artifactId>aspectjrt</artifactId>
-	<version>1.6.12</version>
+	<version>1.7.0</version>
       </dependency>
       <dependency>
 	<groupId>org.aspectj</groupId>
 	<artifactId>aspectjweaver</artifactId>
-	<version>1.6.12</version>
+	<version>1.7.0</version>
       </dependency>
-      
+
       <!-- Other libraries -->
       <dependency>
 	<groupId>com.sun.jersey</groupId>
 	<artifactId>jersey-core</artifactId>
-	<version>1.12</version>
+	<version>1.13</version>
       </dependency>
       <dependency>
 	<groupId>com.sun.jersey</groupId>
 	<artifactId>jersey-server</artifactId>
-	<version>1.12</version>
+	<version>1.13</version>
       </dependency>
       <dependency>
 	<groupId>com.sun.jersey</groupId>
 	<artifactId>jersey-bundle</artifactId>
-	<version>1.12</version>
+	<version>1.13</version>
       </dependency>
       <dependency>
 	<groupId>com.sun.xml.bind</groupId>
 	<artifactId>jaxb-impl</artifactId>
-	<version>2.2.4-1</version>
+	<version>2.2.6</version>
       </dependency>
       <dependency>
 	<groupId>commons-betwixt</groupId>
@@ -185,7 +188,7 @@
       <dependency>
 	<groupId>commons-io</groupId>
 	<artifactId>commons-io</artifactId>
-	<version>2.1</version>
+	<version>2.4</version>
       </dependency>
       <dependency>
 	<groupId>commons-jexl</groupId>
@@ -205,17 +208,17 @@
       <dependency>
 	<groupId>javax.xml.bind</groupId>
 	<artifactId>jaxb-api</artifactId>
-	<version>2.2.6</version>
+	<version>2.2.7</version>
       </dependency>
       <dependency>
 	<groupId>net.sf.ehcache</groupId>
-	<artifactId>ehcache</artifactId>
-	<version>1.6.1</version>
+        <artifactId>ehcache-core</artifactId>
+        <version>2.6.0</version>
       </dependency>
       <dependency>
 	<groupId>net.sourceforge.nekohtml</groupId>
 	<artifactId>nekohtml</artifactId>
-	<version>1.9.15</version>
+	<version>1.9.16</version>
       </dependency>
       <dependency>
 	<groupId>org.antlr</groupId>
@@ -225,7 +228,7 @@
       <dependency>
 	<groupId>org.apache.solr</groupId>
 	<artifactId>solr-solrj</artifactId>
-	<version>3.5.0</version>
+	<version>3.6.1</version>
 	<exclusions>
 	  <exclusion>
 	    <groupId>org.apache.commons</groupId>
@@ -240,7 +243,7 @@
       <dependency>
 	<groupId>org.apache.solr</groupId>
 	<artifactId>solr-core</artifactId>
-	<version>3.5.0</version>
+	<version>3.6.1</version>
 	<exclusions>
 	  <exclusion>
 	    <groupId>org.apache.commons</groupId>
@@ -259,18 +262,18 @@
       <dependency>
 	<groupId>org.codehaus.woodstox</groupId>
 	<artifactId>woodstox-core-asl</artifactId>
-	<version>4.1.2</version>
+	<version>4.1.4</version>
       </dependency>
       <dependency>
 	<groupId>org.apache.wicket</groupId>
 	<artifactId>wicket</artifactId>
-	<version>1.5.4</version>
+	<version>1.5.8</version>
 	<type>pom</type>
       </dependency>
       <dependency>
 	<groupId>org.apache.wicket</groupId>
 	<artifactId>wicket-spring</artifactId>
-	<version>1.5.4</version>
+	<version>1.5.8</version>
 	<exclusions>
 	  <exclusion>
 	    <groupId>org.springframework</groupId>
@@ -296,7 +299,7 @@
       <dependency>
 	<groupId>xerces</groupId>
 	<artifactId>xercesImpl</artifactId>
-	<version>2.10.1</version>
+	<version>2.10.0</version>
       </dependency>
       <dependency>
 	<groupId>xml-apis</groupId>
@@ -306,30 +309,30 @@
 
       <!-- Logging -->
       <dependency>
-	<groupId>org.slf4j</groupId>
-	<artifactId>slf4j-api</artifactId>
-	<version>1.6.4</version>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>${slf4j.version}</version>
       </dependency>
       <dependency>
-	<groupId>ch.qos.logback</groupId>
-	<artifactId>logback-core</artifactId>
-	<version>1.0.0</version>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-core</artifactId>
+        <version>${logback.version}</version>
       </dependency>
       <dependency>
-	<groupId>ch.qos.logback</groupId>
-	<artifactId>logback-classic</artifactId>
-	<version>1.0.0</version>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+        <version>${logback.version}</version>
       </dependency>
       <dependency>
-	<groupId>commons-logging</groupId>
-	<artifactId>commons-logging</artifactId>
-	<version>1.1.1</version>
-	<scope>provided</scope>
+        <groupId>commons-logging</groupId>
+        <artifactId>commons-logging</artifactId>
+        <version>1.1.1</version>
+        <scope>provided</scope>
       </dependency>
       <dependency>
-	<groupId>org.slf4j</groupId>
-	<artifactId>jcl-over-slf4j</artifactId>
-	<version>1.6.4</version>
+        <groupId>org.slf4j</groupId>
+        <artifactId>jcl-over-slf4j</artifactId>
+        <version>${slf4j.version}</version>
       </dependency>
 
       <!-- Cocoon internal dependencies -->
@@ -409,7 +412,7 @@
       <dependency>
 	<groupId>org.apache.cocoon</groupId>
 	<artifactId>cocoon-it-fw</artifactId>
-	<version>1.0.0-M1</version>
+	<version>1.0.0</version>
 	<scope>test</scope>
       </dependency>
       <dependency>
@@ -465,7 +468,7 @@
       </plugin>
       <plugin>
 	<artifactId>maven-compiler-plugin</artifactId>
-	<version>2.3.2</version>
+	<version>2.5.1</version>
 	<configuration>
 	  <source>${javac.src.version}</source>
 	  <target>${javac.target.version}</target>
@@ -528,16 +531,16 @@
 	<plugin>
 	  <groupId>org.apache.cocoon</groupId>
 	  <artifactId>cocoon-it-fw</artifactId>
-	  <version>1.0.0-M1</version>
+	  <version>1.0.0</version>
 	</plugin>
 	<plugin>
 	  <groupId>org.apache.cocoon</groupId>
 	  <artifactId>cocoon-maven-plugin</artifactId>
-	  <version>1.0.0</version>
+	  <version>1.0.2</version>
 	</plugin>
 	<plugin>
 	  <artifactId>maven-war-plugin</artifactId>
-	  <version>2.1-alpha-2</version>
+	  <version>2.2</version>
 	</plugin>
 	<plugin>
 	  <groupId>org.mortbay.jetty</groupId>
@@ -546,7 +549,7 @@
 	</plugin>
 	<plugin>
 	  <artifactId>maven-dependency-plugin</artifactId>
-	  <version>2.0</version>
+	  <version>2.5</version>
 	</plugin>
 	<plugin>
 	  <groupId>org.codehaus.mojo</groupId>
@@ -556,13 +559,13 @@
 	<plugin>
 	  <groupId>org.apache.felix</groupId>
 	  <artifactId>maven-bundle-plugin</artifactId>
-	  <version>1.4.3</version>
+	  <version>2.3.7</version>
 	</plugin>
-	<plugin>
-	  <groupId>org.codehaus.mojo</groupId>
-	  <artifactId>rat-maven-plugin</artifactId>
-	  <version>1.0-alpha-3</version>
-	</plugin>
+        <plugin>
+          <groupId>org.apache.rat</groupId>
+          <artifactId>apache-rat-plugin</artifactId>
+          <version>0.8</version>
+        </plugin>
 	<plugin>
 	  <groupId>org.codehaus.mojo</groupId>
 	  <artifactId>versions-maven-plugin</artifactId>
@@ -571,7 +574,7 @@
 	<plugin>
 	  <groupId>org.codehaus.gmaven</groupId>
 	  <artifactId>gmaven-plugin</artifactId>
-	  <version>1.3</version>
+	  <version>1.4</version>
 	</plugin>
 	<plugin>
 	  <groupId>org.apache.maven.plugins</groupId>
@@ -591,7 +594,7 @@
 	<plugin>
 	  <groupId>org.codehaus.mojo</groupId>
 	  <artifactId>exec-maven-plugin</artifactId>
-	  <version>1.1</version>
+	  <version>1.2.1</version>
 	</plugin>
       </plugins>
     </pluginManagement>
