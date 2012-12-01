@@ -30,8 +30,9 @@
   <modules>
     <module>mysite</module>
     <module>mysite2</module>
-    <module>mywebapp</module>
     <module>mysample</module>
+    <module>mywebapp</module>
+    <module>mywebapp2</module>
   </modules>
 
   <properties>

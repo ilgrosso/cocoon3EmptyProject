@@ -10,27 +10,27 @@
   </parent>
 
   <groupId>com.mycompany</groupId>
-  <artifactId>mywebapp</artifactId>
+  <artifactId>mywebapp2</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
-  <name>mywebapp</name>
+  <name>mywebapp2</name>
 
   <dependencies>
-    <dependency>
+    <!--<dependency>
       <groupId>com.mycompany</groupId>
       <artifactId>mysite</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-<!--    <dependency>
-      <groupId>com.mycompany</groupId>
-      <artifactId>mysite2</artifactId>
       <version>${project.version}</version>
     </dependency>-->
     <dependency>
       <groupId>com.mycompany</groupId>
-      <artifactId>mysample</artifactId>
+      <artifactId>mysite2</artifactId>
       <version>${project.version}</version>
     </dependency>
+    <!--<dependency>
+      <groupId>com.mycompany</groupId>
+      <artifactId>mysample</artifactId>
+      <version>${project.version}</version>
+    </dependency>-->
   </dependencies>
   
   <build>
