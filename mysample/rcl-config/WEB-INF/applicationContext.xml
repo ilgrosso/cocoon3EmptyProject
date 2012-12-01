@@ -15,29 +15,28 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<!-- $Id: applicationContext.xml 1155368 2011-08-09 13:56:40Z ilgrosso $ -->
+<!-- @version $Id: applicationContext.xml 1304308 2012-03-23 12:19:11Z ilgrosso $ -->
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:util="http://www.springframework.org/schema/util"
        xmlns:configurator="http://cocoon.apache.org/schema/configurator"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-                           http://www.springframework.org/schema/beans/spring-beans.xsd
-                           http://www.springframework.org/schema/util
-                           http://www.springframework.org/schema/util/spring-util.xsd
-                           http://cocoon.apache.org/schema/configurator
-                           http://cocoon.apache.org/schema/configurator/cocoon-configurator-1.0.1.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+                           http://cocoon.apache.org/schema/configurator http://cocoon.apache.org/schema/configurator/cocoon-configurator-1.0.1.xsd">
 
-  <!-- Activate Cocoon Spring Configurator -->
-  <configurator:settings>
-    <configurator:property name="org.apache.cocoon.logback.loglevel" value="ERROR"/>
-  </configurator:settings>
+    <!-- Activate Cocoon Spring Configurator -->
+    <configurator:settings>
+        <configurator:property name="org.apache.cocoon.reloading.sitemap" value="true"/>
+        <configurator:property name="org.apache.cocoon.containerencoding" value="UTF-8"/>
+        <configurator:property name="org.apache.cocoon.exception.ProcessingException.unroll" value="true"/>
+    </configurator:settings>
 
-  <!-- Configure Logback -->
-  <bean name="org.apache.cocoon.spring.configurator.logback"
+    <!-- Configure Logback -->
+    <bean name="org.apache.cocoon.spring.configurator.logback"
           class="org.apache.cocoon.spring.configurator.logback.LogbackConfigurator"
           scope="singleton">
-    <property name="settings" ref="org.apache.cocoon.configuration.Settings"/>
-    <property name="resource" value="/WEB-INF/classes/logback.xml"/>
-  </bean>
-    
+        <property name="settings" ref="org.apache.cocoon.configuration.Settings"/>
+        <property name="resource" value="/WEB-INF/classes/logback.xml"/>
+    </bean>
+
 </beans>
