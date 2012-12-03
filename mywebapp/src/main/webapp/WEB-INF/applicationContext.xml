@@ -27,9 +27,6 @@
                            http://cocoon.apache.org/schema/configurator
                            http://cocoon.apache.org/schema/configurator/cocoon-configurator-1.0.1.xsd">
 
-  <!-- Manage classpath:/ URLs -->
-  <bean class="org.apache.cocoon.classpath.ClasspathURLStreamHandlerFactory"/>
-  
   <!-- Activate Cocoon Spring Configurator -->
   <configurator:settings>
     <configurator:property name="org.apache.cocoon.logback.loglevel" value="ERROR"/>

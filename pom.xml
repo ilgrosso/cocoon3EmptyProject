@@ -28,7 +28,6 @@
   <name>myparent</name>
 
   <modules>
-    <module>classpath</module>
     <module>mysite</module>
     <module>mysite2</module>
     <module>mysample</module>

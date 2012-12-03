@@ -16,12 +16,6 @@
   
   <dependencies>
     <dependency>
-      <groupId>com.mycompany</groupId>
-      <artifactId>classpath</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-    
-    <dependency>
       <groupId>org.apache.cocoon.stax</groupId>
       <artifactId>cocoon-stax</artifactId>
     </dependency>
