@@ -6,12 +6,11 @@
   <parent>
     <groupId>com.mycompany</groupId>
     <artifactId>myparent</artifactId>
-    <version>1-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
   </parent>
 
   <groupId>com.mycompany</groupId>
   <artifactId>mysite2</artifactId>
-  <version>1.0-SNAPSHOT</version>
   <name>mysite2</name>
   <description>com.mycompany:mysite2:1.0-SNAPSHOT</description>
 

@@ -6,22 +6,27 @@
   <parent>
     <groupId>com.mycompany</groupId>
     <artifactId>myparent</artifactId>
-    <version>1-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
   </parent>
 
   <groupId>com.mycompany</groupId>
   <artifactId>mywebapp</artifactId>
-  <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
   <name>mywebapp</name>
 
   <dependencies>
     <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    
+    <dependency>
       <groupId>com.mycompany</groupId>
       <artifactId>mysite</artifactId>
       <version>${project.version}</version>
     </dependency>
-<!--    <dependency>
+    <!--    <dependency>
       <groupId>com.mycompany</groupId>
       <artifactId>mysite2</artifactId>
       <version>${project.version}</version>
