@@ -16,6 +16,12 @@
 
   <dependencies>
     <dependency>
+      <groupId>com.mycompany</groupId>
+      <artifactId>classpath</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    
+    <dependency>
       <groupId>org.apache.cocoon.servlet</groupId>
       <artifactId>cocoon-servlet</artifactId>
     </dependency>
@@ -89,6 +95,21 @@
     </dependency>
   </dependencies>
   <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>false</filtering>
+        <excludes>
+          <exclude>META-INF/cocoon/spring/**</exclude>
+        </excludes>
+      </resource>
+      <resource>
+        <directory>src/main/resources/META-INF/cocoon/spring</directory>
+        <filtering>true</filtering>
+        <targetPath>${project.build.outputDirectory}/META-INF/cocoon/spring</targetPath>
+      </resource>
+    </resources>
+    
     <plugins>
       <plugin>
         <artifactId>maven-eclipse-plugin</artifactId>

@@ -23,16 +23,6 @@
     
     <dependency>
       <groupId>com.mycompany</groupId>
-      <artifactId>mysite</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-    <!--    <dependency>
-      <groupId>com.mycompany</groupId>
-      <artifactId>mysite2</artifactId>
-      <version>${project.version}</version>
-    </dependency>-->
-    <dependency>
-      <groupId>com.mycompany</groupId>
       <artifactId>mysample</artifactId>
       <version>${project.version}</version>
     </dependency>
