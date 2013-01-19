@@ -23,6 +23,10 @@
       <map:match pattern="">
         <map:read src="welcome.html" />
       </map:match>
+
+      <map:match pattern="*.xsl">
+        <map:read src="{map:1}.xsl"/>
+      </map:match>
     </map:pipeline>    
     
     <!-- Global error handling -->

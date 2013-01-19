@@ -16,6 +16,12 @@
 
   <dependencies>
     <dependency>
+      <groupId>com.mycompany</groupId>
+      <artifactId>mysite2</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
+    <dependency>
       <groupId>org.apache.cocoon.servlet</groupId>
       <artifactId>cocoon-servlet</artifactId>
     </dependency>
@@ -95,12 +101,18 @@
         <filtering>false</filtering>
         <excludes>
           <exclude>META-INF/cocoon/spring/**</exclude>
+          <exclude>COB-INF/sitemap.xmap</exclude>
         </excludes>
       </resource>
       <resource>
         <directory>src/main/resources/META-INF/cocoon/spring</directory>
         <filtering>true</filtering>
         <targetPath>${project.build.outputDirectory}/META-INF/cocoon/spring</targetPath>
+      </resource>
+      <resource>
+        <directory>src/main/resources/COB-INF</directory>
+        <filtering>true</filtering>
+        <targetPath>${project.build.outputDirectory}/COB-INF</targetPath>
       </resource>
     </resources>
     
