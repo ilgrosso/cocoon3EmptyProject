@@ -7,6 +7,7 @@ Sample POC for an alternative solution to [COCOON3-105](https://issues.apache.or
 
     $ git clone https://github.com/ilgrosso/cocoon3EmptyProject.git
     $ git checkout COCOON3-105
+    $ cd COCOON3-105
     $ mvn clean package
     $ mvn cargo:run
     
