@@ -17,7 +17,7 @@
   <dependencies>
     <dependency>
       <groupId>com.mycompany</groupId>
-      <artifactId>mysite2</artifactId>
+      <artifactId>mysite</artifactId>
       <version>${project.version}</version>
     </dependency>
 
