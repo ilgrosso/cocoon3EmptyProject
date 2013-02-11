@@ -28,6 +28,10 @@
   
   <!-- A Cocoon-Sitemap based servlet-service. -->
   <bean id="com.mycompany.mysite2.service" class="org.apache.cocoon.servlet.XMLSitemapServlet">
-    <servlet:context mount-path="/mysite2" context-path="jar:classpath:lib/${project.build.finalName}.jar!/COB-INF/"/>    
+    <servlet:context mount-path="/mysite2" context-path="jar:classpath:lib/${project.build.finalName}.jar!/COB-INF/">
+      <servlet:connections>
+        <entry key="mysite" value-ref="com.mycompany.mysite.service"/>
+      </servlet:connections>
+    </servlet:context>
   </bean>
 </beans>

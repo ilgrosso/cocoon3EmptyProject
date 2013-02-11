@@ -17,7 +17,7 @@
 -->
 <!-- $Id: sitemap.xmap 1304308 2012-03-23 12:19:11Z ilgrosso $ -->
 <map:sitemap xmlns:map="http://apache.org/cocoon/sitemap" xmlns:servlet="http://apache.org/cocoon/servlet" 
-	     xmlns:controller="http://apache.org/cocoon/controller"> 
+             xmlns:controller="http://apache.org/cocoon/controller"> 
   
   <map:pipelines>
     <map:pipeline>
@@ -25,8 +25,15 @@
         <map:read src="welcome.html" />
       </map:match>
 
+      <!-- read resource from mysite block -->
       <map:match pattern="*.xsl">
         <map:read src="jar:classpath:lib/mysite-${project.version}.jar!/COB-INF/{map:1}.xsl"/>
+      </map:match>
+
+      <!-- invoke pipeline from mysite block -->
+      <map:match pattern="mysite-welcome">
+        <map:generate src="servlet:mysite:/"/>
+        <map:serialize type="html"/>
       </map:match>
     </map:pipeline>    
     
