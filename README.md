@@ -34,4 +34,6 @@ XSLT read from local resources
  * [http://localhost:8888/mywebapp2/mysite2/](http://localhost:8888/mywebapp2/mysite2/)<br/>
 _mysite2_ welcome page (static HTML)
  * [http://localhost:8888/mywebapp2/mysite2/identity.xsl](http://localhost:8888/mywebapp2/mysite2/identity.xsl)<br/>
-XSLT read from block _mysite1_
+XSLT read from block _mysite_
+ * [http://localhost:8888/mywebapp2/mysite2/mysite-welcome](http://localhost:8888/mywebapp2/mysite2/mysite-welcome)<br/>
+read block _mysite_'s pipeline
